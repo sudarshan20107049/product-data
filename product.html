@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Info</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .products-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        margin-top: 50px;
+      }
+
+      .product-container {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+        width: 100%;
+      }
+
+      .product-container.selected {
+        border-color: rgb(7, 198, 61);
+        background-color: rgba(7, 198, 61, 0.164);
+        border-radius: 5px;
+      }
+
+      .product-info {
+        display: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .product-container.selected .product-info {
+        display: block;
+        opacity: 1;
+      }
+
+      .add-to-cart-button {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #4caf50;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        align-self: stretch;
+        border-radius: 5px;
+      }
+      .price-info {
+        display: none;
+      }
+      .group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: start;
+        gap: 5px;
+      }
+      .group-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .group-input {
+        display: flex;
+        gap: 20px;
+      }
+      .product-name {
+        margin: 0;
+      }
+      .options {
+        width: 70px;
+        height: 20px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+      .dropdown-group{
+        display: flex;
+       column-gap: 6px;
+       margin-top: 8px;
+      }
+     .drop-down{
+        margin-left: 12px;
+     }
+      .dropdown-label1,.dropdown-label2 {
+        color: dimgray;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .dropdown-label1{
+       margin-left: 32px;
+      }
+      .shipping-data{
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .shipment{
+        color: #0f8013;
+      }
+      .amount{
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="products-container">
+      <div class="product-container" onclick="toggleRadio(this)">
+        <div class="group-head">
+          <div class="group-input">
+            <input type="radio" name="product" id="product2" />
+            <div for="product2" class="group">
+              <h3>Product 1</h3>
+              <p>DKK 750</p>
+            </div>
+          </div>
+          <div>
+            <h3>10% OFF</h3>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="price-info">Price: $750</p>
+          <div class="dropdown-group">
+            <div >
+                <label class="dropdown-label1">Size</label>
+                <div class="drop-down">
+                    <span>#1</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+                <div class="drop-down">
+                    <span>#2</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+              </div>
+    
+              <div>
+                <label class="dropdown-label2">Colour</label>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="product-container" onclick="toggleRadio(this)">
+        <div class="group-head">
+          <div class="group-input">
+            <input type="radio" name="product" id="product2" />
+            <div for="product2" class="group">
+              <h3>Product 2</h3>
+              <p>DKK 75</p>
+            </div>
+          </div>
+          <div>
+            <h3>30% OFF</h3>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="price-info">Price: $75</p>
+          <div class="dropdown-group">
+            <div >
+                <label class="dropdown-label1">Size</label>
+                <div class="drop-down">
+                    <span>#1</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+                <div class="drop-down">
+                    <span>#2</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+              </div>
+    
+              <div>
+                <label class="dropdown-label2">Colour</label>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-container" onclick="toggleRadio(this)">
+        <div class="group-head">
+          <div class="group-input">
+            <input type="radio" name="product" id="product2" />
+            <div for="product2" class="group">
+              <h3>Product 3</h3>
+              <p>DKK 200</p>
+            </div>
+          </div>
+          <div>
+            <h3>90% OFF</h3>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="price-info">Price: $200</p>
+          <div class="dropdown-group">
+            <div >
+                <label class="dropdown-label1">Size</label>
+                <div class="drop-down">
+                    <span>#1</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+                <div class="drop-down">
+                    <span>#2</span>
+                  <select class="options">
+                    <option>S</option>
+                    <option>M</option>
+                  </select>
+                </div>
+              </div>
+    
+              <div>
+                <label class="dropdown-label2">Colour</label>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+                <div>
+                  <select class="options">
+                    <option>Colour</option>
+                    <option>Colour</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+<div class="shipping-data">
+    <div class="shipment">Free 2 day Shipping</div>
+    <div><span>Total :</span> <span class="amount">DKK 360.00</span></div>
+</div>
+      <button class="add-to-cart-button" onclick="addToCart()">
+        <i class="fa-solid fa-plus"></i>  Add to Cart
+      </button>
+    </div>
+    <script src="https://kit.fontawesome.com/73963a4c20.js" crossorigin="anonymous"></script>
+    <script >
+      function toggleRadio(element) {
+        var radio = element.querySelector('input[type="radio"]');
+        var productInfo = element.querySelector(".product-info");
+
+        document.querySelectorAll(".product-info").forEach(function (info) {
+          info.style.opacity = "0";
+        });
+
+        radio.checked = true;
+
+        document
+          .querySelectorAll(".product-container")
+          .forEach(function (item) {
+            item.classList.remove("selected");
+          });
+        element.classList.add("selected");
+
+        productInfo.style.opacity = "1";
+      }
+
+      function addToCart() {
+        var selectedProduct = document.querySelector(
+          ".product-container.selected"
+        );
+        if (selectedProduct) {
+          var price = selectedProduct
+            .querySelector(".product-info p")
+            .innerText.split(": ")[1];
+          console.log("Added to Cart: " + price);
+        } else {
+          console.log("No product selected.");
+        }
+      }
+    </script>
+  </body>
+</html>
